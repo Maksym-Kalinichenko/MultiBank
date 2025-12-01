@@ -1,4 +1,4 @@
-<img width="1080" height="2280" alt="Screenshot_20251201_212333" src="https://github.com/user-attachments/assets/7ad3c215-7401-4e70-814b-c0d8c56bcb68" />MultiBank App
+MultiBank App
 A simple Android application that displays 25 stock symbols with live updates. Prices refresh every 2 seconds, and the UI provides visual cues for price changes and connection status.
 
 Features
