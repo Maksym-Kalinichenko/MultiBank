@@ -64,13 +64,14 @@ import com.realtime.presentation.ui.theme.buyColor
 import com.realtime.presentation.ui.theme.sellColor
 import com.realtime.presentation.viewModel.home.HomeScreenContract
 import com.realtime.presentation.viewModel.home.HomeViewModel
+import com.realtime.presentation.viewModel.home.IHomeViewModel
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     modifier: Modifier,
-    homeViewModel: HomeViewModel = hiltViewModel(),
+    homeViewModel: IHomeViewModel = hiltViewModel<HomeViewModel>()
 ) {
     val marketViewState by homeViewModel.marketListViewState.collectAsStateWithLifecycle()
     val viewState by homeViewModel.viewState.collectAsStateWithLifecycle()

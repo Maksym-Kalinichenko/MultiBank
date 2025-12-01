@@ -19,18 +19,19 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val webSocketDataSource: WebSocketDataSource
-) : ViewModel() {
+) : ViewModel(), IHomeViewModel {
 
     private val _viewState = MutableStateFlow(HomeScreenContract.HomeViewUIState())
-    val viewState: StateFlow<HomeScreenContract.HomeViewUIState> get() = _viewState
+    override val viewState: StateFlow<HomeScreenContract.HomeViewUIState> get() = _viewState
 
     private var _marketListViewState =
         MutableStateFlow<HomeScreenContract.MarketViewState>(HomeScreenContract.MarketViewState.Loading)
-    val marketListViewState: StateFlow<HomeScreenContract.MarketViewState> = _marketListViewState
+    override val marketListViewState: StateFlow<HomeScreenContract.MarketViewState> =
+        _marketListViewState
     private var periodicSendJob: Job? = null
     private var webSocketJob: Job = Job()
 
-    fun setEvent(event: HomeScreenContract.HomeViewEvent) {
+    override fun setEvent(event: HomeScreenContract.HomeViewEvent) {
         when (event) {
             HomeScreenContract.HomeViewEvent.Init -> onInit()
             HomeScreenContract.HomeViewEvent.SwitchChanged -> onSwitchChanged()
