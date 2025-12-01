@@ -38,6 +38,10 @@ A simple Android application that displays 25 stock symbols with live updates. P
 ## Bonus Tasks
 - Price flashes green for 1 second on increase, and red on decrease  
 - Support for light and dark themes
+- Compose UI tests: (IHomeViewModel interface and FakeHomeViewModel for testing)
+  - **Switch toggle test:** Verifies that clicking the switch changes its state (on/off).
+  - **Success state test:** Checks that market items (e.g., "AAPL", "GOOG") are displayed correctly when data is loaded successfully.
+  - **Error state test:** Ensures that an error message is shown when the market data fails to load.
 
 ---
 
